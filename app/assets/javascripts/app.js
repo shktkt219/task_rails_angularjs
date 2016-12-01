@@ -1,5 +1,5 @@
 var app;
-app = angular.module('taskApp', []);
+app = angular.module('taskApp', ['ui.bootstrap']);
 
 // CSRF(Cross-site Request Forgery)token
 app.config(function($httpProvider){
