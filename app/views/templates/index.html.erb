@@ -1,9 +1,9 @@
 <div class="container" ng-controller="TodoListCtrl", ng-init="init()">
   <h1>Task Manager</h1>
-
+  <br>
   <div class="panel panel-default">
     <div class="panel-heading">
-      <span>{{ list.name }}</span>
+      <h4>{{ list.name }}</h4>
     </div>
 
     <form id="new_todo"
@@ -24,7 +24,8 @@
       <li class="list-group-item" ng-repeat="todo in list.todos">
         <div class="todo-done">
           <input type="checkbox"
-                 ng-model="todo.done">
+                 ng-model="todo.done"
+                 ng-click="toggleTodo(todo)">
         </div>
         <div class="todo-description">
           <span class="done-{{todo.done}}">{{ todo.description }}</span>
