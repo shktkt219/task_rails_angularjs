@@ -6,13 +6,15 @@
       <span>{{ list.name }}</span>
     </div>
 
-    <form id="new_todo">
+    <form id="new_todo"
+          ng-submit="addTodo(todoDescription)">
       <div class="input-group">
         <input type="text"
                id="todoDescription"
                class="form-control input-lg"
                autofocus="autofocus"
-               maxlength="255">
+               maxlength="255"
+               ng-model="todoDescription">
         <button type="submit" class="btn btn-default btn-lg">Add</button>
       </div>
     </form>
