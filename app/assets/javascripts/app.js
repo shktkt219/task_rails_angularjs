@@ -9,7 +9,7 @@ app.config(function($httpProvider){
   return $httpProvider.defaults.headers.common["X-CSRF-TOKEN"] = authToken;
 });
 
-// combine AngularJS and turbolinks
+// AngularJS can work with turbolinks
 $(document).on('page:load', function(){
   return $('[ng-app]').each(function(){
     var module;
