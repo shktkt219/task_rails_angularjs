@@ -14,7 +14,8 @@
                class="form-control input-lg"
                autofocus="autofocus"
                maxlength="255"
-               ng-model="todoDescription">
+               ng-model="todoDescription"
+               placeholder="New Task">
         <button class="btn btn-default btn-lg" type="submit">Add</button>
       </div>
     </form>
@@ -22,10 +23,11 @@
     <ul class="list-group">
       <li class="list-group-item" ng-repeat="todo in list.todos">
         <div class="todo-done">
-          <input type="checkbox">
+          <input type="checkbox"
+                 ng-model="todo.done">
         </div>
         <div class="todo-description">
-          <span>{{ todo.description }}</span>
+          <span class="done-{{todo.done}}">{{ todo.description }}</span>
         </div>
         <div class="todo-buttons pull-right">
           <button class="btn btn-danger btn-xs bull-right"

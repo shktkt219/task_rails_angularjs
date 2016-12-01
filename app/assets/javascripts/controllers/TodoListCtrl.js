@@ -4,9 +4,11 @@ angular.module('taskApp').controller("TodoListCtrl", function($scope) {
       'name': 'House Chores',
       'todos': [
         {
-          'description': 'Swipe the floor'
+          'description': 'Swipe the floor',
+          'done': false
         }, {
-          'description': 'Wash dishes'
+          'description': 'Wash dishes',
+          'done': false
         }
       ]
     };
@@ -15,7 +17,8 @@ angular.module('taskApp').controller("TodoListCtrl", function($scope) {
   $scope.addTodo = function(todoDescription) {
     var todo;
     todo = {
-      'description': todoDescription
+      'description': todoDescription,
+      'done': false
     };
     $scope.list.todos.push(todo);
     return $scope.todoDescription = "";
