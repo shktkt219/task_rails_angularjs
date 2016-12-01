@@ -28,7 +28,9 @@
           <span>{{ todo.description }}</span>
         </div>
         <div class="todo-buttons pull-right">
-          <button class="btn btn-danger btn-xs bull-right" type="button">
+          <button class="btn btn-danger btn-xs bull-right"
+                  type="button"
+                  ng-click="deleteTodo(todo)">
             <span>Delete</span>
           </button>
         </div>

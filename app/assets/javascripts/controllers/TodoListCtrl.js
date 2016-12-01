@@ -11,12 +11,17 @@ angular.module('taskApp').controller("TodoListCtrl", function($scope) {
       ]
     };
   };
-  return $scope.addTodo = function(todoDescription) {
+
+  $scope.addTodo = function(todoDescription) {
     var todo;
     todo = {
       'description': todoDescription
     };
     $scope.list.todos.push(todo);
     return $scope.todoDescription = "";
+  };
+
+  $scope.deleteTodo = function(todo) {
+    return $scope.list.todos.splice($scope.list.todos.indexOf(todo), 1);
   };
 });
