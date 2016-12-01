@@ -1,8 +1,8 @@
 angular.module('taskApp').controller("TodoListCtrl", function($scope) {
-  return $scope.init = function() {
+  $scope.init = function() {
     return $scope.list = {
-      name: 'Task Manager',
-      todos: [
+      'name': 'House Chores',
+      'todos': [
         {
           'description': 'Swipe the floor'
         }, {
@@ -10,5 +10,13 @@ angular.module('taskApp').controller("TodoListCtrl", function($scope) {
         }
       ]
     };
+  };
+  return $scope.addTodo = function(todoDescription) {
+    var todo;
+    todo = {
+      'description': todoDescription
+    };
+    $scope.list.todos.push(todo);
+    return $scope.todoDescription = "";
   };
 });
