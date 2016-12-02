@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
 
-  root 'templates#home'
-  get '/dashboard' => 'templates#dashboard'
+  root 'templates#index'
+  get '/dashboard' => 'templates#index'
   get '/todo_lists/:id' => 'templates#index'
   get '/about' => 'templates#index'
   get '/templates/:path.html' => 'templates#templates', constraints: { path: /.+/ }
