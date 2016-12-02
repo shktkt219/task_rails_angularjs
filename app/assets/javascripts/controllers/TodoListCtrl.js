@@ -28,6 +28,19 @@ angular.module('taskApp').controller("TodoListCtrl", function($scope, $statePara
     });
   };
 
+  $scope.filter = {
+    done: {
+      done: true
+    },
+    remaining: {
+      done: false
+    }
+  };
+
+  $scope.changeFilter = function(filter){
+    return $scope.currentFilter = filter;
+  };
+
   var serverErrorHandler
   serverErrorHandler = function(){
     alert("server error");
