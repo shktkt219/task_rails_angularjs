@@ -24,6 +24,7 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'jquery-turbolinks'
 gem 'active_model_serializers'
+gem 'bower-rails'
 gem 'omniauth'
 gem 'devise_token_auth'
 
