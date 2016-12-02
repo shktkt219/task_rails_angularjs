@@ -12,7 +12,7 @@ app.config(function($httpProvider){
 app.config(function($stateProvider, $urlRouterProvider){
   $urlRouterProvider.otherwise('/home');
 
-  return $stateProvider.state('home',{
+  $stateProvider.state('home',{
     url: '/home',
     templateUrl: '/templates/home.html'
   }).state('index', {
