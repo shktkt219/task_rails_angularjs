@@ -56,7 +56,9 @@
     </div>
 
     <ul class="list-group">
-      <li class="list-group-item" ng-repeat="todo in list.todos">
+      <li class="list-group-item"
+          ng-repeat="todo in list.todos | filter:currentFilter"
+          ng-class="{done: todo.done}">
         <div class="todo-done">
           <input type="checkbox"
                  ng-model="todo.done"
