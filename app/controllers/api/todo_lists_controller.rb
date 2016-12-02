@@ -1,8 +1,33 @@
 module Api
    class TodoListsController < ApplicationController
+     before_action :set_todo_list, only: [:show, :destroy]
+
+     def index
+       render json: TodoList.all
+     end
+
      def show
-       @todo_list = TodoList.find(params[:id])
        render json: @todo_list, status: 201
+     end
+
+     def create
+       list = TodoList.create!(todo_list_params)
+       render json: list, status: 201
+     end
+
+     def delete
+       @todo_list.destroy
+       render nothing: true
+     end
+
+     private
+
+     def set_todo_list
+       @todo_list ||= TodoList.find(params[:id])
+     end
+
+     def todo_list_params
+       paramas.require(:todo_list).permit(:name)
      end
    end
 end
