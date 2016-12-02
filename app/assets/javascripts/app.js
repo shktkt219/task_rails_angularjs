@@ -9,10 +9,10 @@ app.config(function($httpProvider){
   return $httpProvider.defaults.headers.common["X-CSRF-TOKEN"] = authToken;
 });
 
-app.config(function($statePrivider, $urlRouterProvider){
+app.config(function($stateProvider, $urlRouterProvider){
   $urlRouterProvider.otherwise('/home');
 
-  return $statePrivider.state('home',{
+  return $stateProvider.state('home',{
     url: '/home',
     templateUrl: '/templates/home.html'
   }).state('index', {
