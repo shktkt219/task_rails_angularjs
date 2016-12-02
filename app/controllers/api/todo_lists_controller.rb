@@ -15,7 +15,7 @@ module Api
        render json: list, status: 201
      end
 
-     def delete
+     def destroy
        @todo_list.destroy
        render nothing: true
      end
@@ -27,7 +27,7 @@ module Api
      end
 
      def todo_list_params
-       paramas.require(:todo_list).permit(:name)
+       params.require(:todo_list).permit(:name)
      end
    end
 end

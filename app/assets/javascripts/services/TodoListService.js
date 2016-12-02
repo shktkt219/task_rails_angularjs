@@ -29,10 +29,10 @@ angular.module('taskApp').factory('TodoList', function($resource, $http) {
       }), this.errorHandler);
     };
 
-    TodoList.prototype.create = function(attrs){
+    TodoList.prototype.create = function(attrs) {
       new this.service({
         todo_list: attrs
-      }).$save((function(list){
+      }).$save((function(list) {
         return attrs.id = list.id;
       }), this.errorHandler);
       return attrs;

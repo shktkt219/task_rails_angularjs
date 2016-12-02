@@ -1,8 +1,10 @@
-angular.module('taskApp').controller("TodoListCtrl", function($scope, TodoList, Todo) {
+angular.module('taskApp').controller("TodoListCtrl", function($scope, $stateParams, TodoList, Todo) {
   $scope.init = function() {
     this.todoListService = new TodoList(serverErrorHandler);
-    this.todoService = new Todo(1, serverErrorHandler);
-    return $scope.list = this.todoListService.find(1);
+    this.todoService = new Todo($stateParams.list_id, serverErrorHandler);
+    return $scope.list = this.todoListService.find($stateParams.list_id, function(res){
+      return $scope.totalTodos = res.totalTodos;
+    });
   };
 
   $scope.addTodo = function(todoDescription) {
