@@ -1,6 +1,6 @@
 #Task Manager
 
-This is a Single Page Angular App for “Task Manager” - Accomplish more, every day.Millions of people rely on Todoist to get things done.
+This is a Single Page Angular App for “Task Manager” - Accomplish more, every day. Millions of people rely on Task Manager List to get things done.
 
 
 ##Installation
