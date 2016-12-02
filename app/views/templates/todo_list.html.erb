@@ -26,6 +26,35 @@
       </div>
     </form>
 
+    <div class="button-group btn-group-justified" role="group">
+      <div class="btn-group" role="group">
+        <button type="button"
+                class="btn btn-default"
+                ng-click="changeFilter()"
+                ng-class="{active: !currentFilter}">
+                <span class="badge">Task All</span>
+        </button>
+      </div>
+
+      <div class="btn-group" role="group">
+        <button type="button"
+                class="btn btn-default"
+                ng-click="changeFilter(filter.remaining)"
+                ng-class="{active: cuttentFilter == filter.remaining}">
+                Incompleted
+        </button>
+      </div>
+
+      <div class="btn-group" role="group">
+        <button type="button"
+                class="btn btn-default"
+                ng-click="changeFilter(filter.done)"
+                ng-class="{active: currentFilter == filter.done}">
+                Completed
+        </button>
+      </div>
+    </div>
+
     <ul class="list-group">
       <li class="list-group-item" ng-repeat="todo in list.todos">
         <div class="todo-done">
