@@ -16,6 +16,7 @@
 //= require turbolinks
 //= require angular
 //= require angular-resource
+//= require angular-ui-router
 //= require ui-bootstrap-tpls-2.3.0
 //= require app
 //= require_tree .
