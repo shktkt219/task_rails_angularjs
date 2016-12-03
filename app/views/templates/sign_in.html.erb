@@ -1,3 +1,7 @@
+<div class="alert alert-danger" role="alert" ng-show="error">
+  {{ error }}
+</div>
+
 <form ng-submit="submitLogin(liginForm)"
       role="form"
       ng-init="loginForm = {}">
@@ -14,12 +18,12 @@
   <div class="form-group">
     <label for="password">Password</label>
     <input type="password"
-           name="password" 
+           name="password"
            id="password"
            ng-model="loginForm.password"
            required="required"
            class="form-controll">
   </div>
 
-  <button type="submit" class="btn btn-primary btn-lg">Sign in</button>
+  <button type="submit" class="btn btn-primary">Sign in</button>
 </form>
