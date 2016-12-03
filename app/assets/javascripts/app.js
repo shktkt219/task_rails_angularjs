@@ -1,5 +1,3 @@
-'use strict';
-
 var app;
 app = angular.module('taskApp', [
   'ui.bootstrap',

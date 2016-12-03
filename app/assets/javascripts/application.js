@@ -16,8 +16,8 @@
 //= require turbolinks
 //= require angular
 //= require angular-cookie
-//= require angular-resource
 //= require angular-ui-router
+//= require angular-resource
 //= require angular-messages
 //= require ng-token-auth
 //= require ui-bootstrap-tpls-2.3.0
