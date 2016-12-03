@@ -11,9 +11,13 @@
     <div class="navbar-header">
         <a class="navbar-brand" ui-sref="#">Task Manager</a>
         <ul class="nav navbar-nav">
-            <li><a ui-sref="home">Home</a></li>
-            <li><a ui-sref="index.dashboard">Dashboard</a></li>
-            <li><a ui-sref="index.about">About</a></li>
+          <li><a ui-sref="home">Home</a></li>
+          <li><a ui-sref="index.dashboard">Dashboard</a></li>
+          <li><a ui-sref="index.about">About</a></li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+          <li ng-show="!user.id"><a ui-sref="index.sign_in">Sign in</a></li>
+          <li ng-show="user.id"><a ng-click="signOut()">Sign out</a></li>
         </ul>
     </div>
   </header>

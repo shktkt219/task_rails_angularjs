@@ -34,8 +34,8 @@ app.config(function($stateProvider, $urlRouterProvider){
     url: 'todo_lists/:list_id',
     templateUrl: '/templates/todo_list.html',
     controller: 'TodoListCtrl'
-  }).state('/sign_in', {
-    templateUrl: '/user_sessions/new.html',
+  }).state('index.sign_in', {
+    templateUrl: '/templates/new.html',
     controller: 'UserSessionCtrl'
   });
 });
