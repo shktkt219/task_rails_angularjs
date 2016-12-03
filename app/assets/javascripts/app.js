@@ -36,10 +36,16 @@ app.config(function($stateProvider, $urlRouterProvider){
     controller: 'TodoListCtrl'
   }).state('index.sign_in', {
     url: 'sign_in',
-    templateUrl: '/templates/new.html',
+    templateUrl: '/templates/sign_in.html',
     controller: 'UserSessionCtrl'
   });
 });
+
+app.run(['$rootScope', '$location', function($rootScope, $location) {
+  $rootScope.$on('auth:login-success', function() {
+    $location.path('/#/dashboard');
+  });
+}]);
 
 // AngularJS can work with turbolinks
 $(document).on('page:load', function(){
