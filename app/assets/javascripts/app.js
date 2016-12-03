@@ -35,6 +35,7 @@ app.config(function($stateProvider, $urlRouterProvider){
     templateUrl: '/templates/todo_list.html',
     controller: 'TodoListCtrl'
   }).state('index.sign_in', {
+    url: 'sign_in',
     templateUrl: '/templates/new.html',
     controller: 'UserSessionCtrl'
   });
