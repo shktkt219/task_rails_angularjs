@@ -1,5 +1,6 @@
 module Api
   class TodosController < ApplicationController
+    before_action :authenticate_user!
     before_action :set_todo_list
 
      def create

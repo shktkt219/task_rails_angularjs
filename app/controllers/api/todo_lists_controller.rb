@@ -1,7 +1,8 @@
 module Api
    class TodoListsController < ApplicationController
+     before_action :authenticate_user!
      before_action :set_todo_list, only: [:show, :destroy]
-
+     
      def index
        render json: TodoList.all
      end
