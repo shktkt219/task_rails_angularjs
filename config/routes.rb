@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  mount_devise_token_auth_for 'User', at: 'auth'
 
   root 'templates#index'
   get '/dashboard' => 'templates#index'
@@ -8,8 +7,10 @@ Rails.application.routes.draw do
   get '/templates/:path.html' => 'templates#template', constraints: { path: /.+/ }
 
   namespace :api, defaults: { format: :json } do
+    mount_devise_token_auth_for 'User', at: 'auth'
     resources :todo_lists, only: [:index, :show, :create, :destroy] do
       resources :todos, except: [:index, :new, :edit, :show]
     end
   end
+
 end
