@@ -14,35 +14,60 @@ app.config(function($httpProvider){
   return $httpProvider.defaults.headers.common["X-CSRF-TOKEN"] = authToken;
 });
 
-app.config(function($stateProvider, $urlRouterProvider){
-  $urlRouterProvider.otherwise('/home');
-
-  $stateProvider.state('home',{
-    url: '/home',
-    templateUrl: '/templates/home.html'
-  }).state('index', {
-    url: '/',
-    templateUrl: '/templates/index.html'
-  }).state('index.dashboard', {
-    url: 'dashboard',
-    templateUrl: '/templates/dashboard.html',
-    controller: 'DashboardCtrl'
-  }).state('index.about', {
-    url: 'about',
-    templateUrl: '/templates/about.html'
-  }).state('index.todolist', {
-    url: 'todo_lists/:list_id',
-    templateUrl: '/templates/todo_list.html',
-    controller: 'TodoListCtrl'
-  }).state('index.registration', {
-    url: 'registration',
-    templateUrl: '/templates/registration.html',
-    controller: 'UserRegistrationsCtrl'
-  }).state('index.sign_in', {
-    url: 'sign_in',
-    templateUrl: '/templates/sign_in.html',
-    controller: 'UserSessionsCtrl'
+app.config(function($authProvider){
+  $authProvider.configure({
+    apiUrl: '/api',
   });
+});
+
+app.config(function($stateProvider, $urlRouterProvider){
+  $urlRouterProvider.otherwise('/');
+
+  $stateProvider
+    .state('registration', {
+      url: '/sing_up',
+      templateUrl: '/templates/registration.html',
+      controller: 'UserRegistrationsCtrl'
+    })
+
+    .state('sign_in', {
+      url: '/sign_in',
+      templateUrl: '/templates/sign_in.html',
+      controller: 'UserSessionsCtrl'
+    })
+
+    .state('home',{
+      url: '/home',
+      templateUrl: '/templates/home.html'
+    })
+
+    .state('about', {
+      url: '/about',
+      templateUrl: '/templates/about.html'
+    })
+
+    .state('user', {
+      url: '/user',
+      abstract: true,
+      template: '<ui-view>',
+      resolve: {
+        auth: function($auth){
+          return $auth.validateUser();
+        }
+      }
+    })
+
+    .state('user.dashboard', {
+      url: 'dashboard',
+      templateUrl: '/templates/dashboard.html',
+      controller: 'DashboardCtrl'
+    })
+
+    .state('user.todolist', {
+      url: 'todo_lists/:list_id',
+      templateUrl: '/templates/todo_list.html',
+      controller: 'TodoListCtrl'
+    });
 });
 
 app.run(['$rootScope', '$location', function($rootScope, $location) {
