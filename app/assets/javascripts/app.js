@@ -38,7 +38,7 @@ app.config(function($stateProvider, $urlRouterProvider){
     url: 'registration',
     templateUrl: '/templates/registration.html',
     controller: 'UserRegistrationsCtrl'
-  });.state('index.sign_in', {
+  }).state('index.sign_in', {
     url: 'sign_in',
     templateUrl: '/templates/sign_in.html',
     controller: 'UserSessionsCtrl'
