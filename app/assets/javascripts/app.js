@@ -37,7 +37,7 @@ app.config(function($stateProvider, $urlRouterProvider){
   }).state('index.sign_in', {
     url: 'sign_in',
     templateUrl: '/templates/sign_in.html',
-    controller: 'UserSessionCtrl'
+    controller: 'UserSessionsCtrl'
   });
 });
 
