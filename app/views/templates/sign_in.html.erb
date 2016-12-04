@@ -1,13 +1,12 @@
 <h3>SIGN IN</h3>
 <br>
-<form ng-submit="handleLoginBtnClick()"
+<form ng-submit="submitLogin(loginForm)"
       role="form"
       ng-init="loginForm = {}">
   <div class="form-group">
     <label for="email">Email</label>
     <input type="email"
            name="email"
-           id="email"
            ng-model="loginForm.email"
            required="required"
            class="form-control">
@@ -17,7 +16,6 @@
     <label for="password">Password</label>
     <input type="password"
            name="password"
-           id="password"
            ng-model="loginForm.password"
            required="required"
            class="form-control">
