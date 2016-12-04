@@ -1,7 +1,10 @@
 angular
    .module('taskApp')
-   .controller('UserSessionsCtrl', ['$scope', function($scope){
-     $scope.$on('auth:login-error', function(ev, reason){
-       $scope.error = reason.errors[0];
-     });
+   .controller('UserSessionsCtrl', ['$scope', '$auth', '$sate', function($scope, $auth, $state){
+     $scope.handleLoginBtnClick = function(){
+       $auth.submitLogin($scope.loginForm)
+       .then(function(){
+         $state.go('dashboard');
+       });
+     };
    }]);
