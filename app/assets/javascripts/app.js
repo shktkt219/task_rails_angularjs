@@ -25,15 +25,15 @@ app.config(function($stateProvider, $urlRouterProvider){
 
   $stateProvider
     .state('registration', {
-      url: '/sing_up',
+      url: '/sign_up',
       templateUrl: '/templates/registration.html',
-      controller: 'UserRegistrationsCtrl'
+      controller: 'UserCtrl'
     })
 
     .state('sign_in', {
       url: '/sign_in',
       templateUrl: '/templates/sign_in.html',
-      controller: 'UserSessionsCtrl'
+      controller: 'UserCtrl'
     })
 
     .state('home',{
